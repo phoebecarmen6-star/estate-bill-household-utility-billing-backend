@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.estatebill.estate_bill_household_utility_billing.model.MeterReading;
+import com.estatebill.estate_bill_household_utility_billing.model.ReadingStatus;
 import com.estatebill.estate_bill_household_utility_billing.repository.MeterReadingRepository;
 
 @Service
@@ -46,5 +47,9 @@ public class MeterReadingService {
         }
         repository.deleteById(id);
         return "Meter reading deleted successfully";
+    }
+
+    public List<MeterReading> getByStatus(ReadingStatus status) {
+        return repository.findByStatusOrderByReadingDateAsc(status);
     }
 }

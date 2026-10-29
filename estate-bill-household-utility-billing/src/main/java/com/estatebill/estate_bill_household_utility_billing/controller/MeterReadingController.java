@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.estatebill.estate_bill_household_utility_billing.model.MeterReading;
+import com.estatebill.estate_bill_household_utility_billing.model.ReadingStatus;
 import com.estatebill.estate_bill_household_utility_billing.service.MeterReadingService;
 
 @RestController
@@ -24,6 +25,11 @@ public class MeterReadingController {
     @GetMapping("/all")
     public ResponseEntity<List<MeterReading>> getAll() {
         return ResponseEntity.ok(service.getAll());
+    }
+
+    @GetMapping("/by-status")
+    public ResponseEntity<List<MeterReading>> getByStatus(@RequestParam ReadingStatus status) {
+        return ResponseEntity.ok(service.getByStatus(status));
     }
 
     @GetMapping("/{id}")
