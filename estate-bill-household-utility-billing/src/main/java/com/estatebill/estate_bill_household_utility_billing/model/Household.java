@@ -14,8 +14,8 @@ import java.util.UUID;
     private String unitCode;
     private String phone;
 
-public UUID getID() { return id; }
-public void setID(UUID id) { this.id = id; }
+public UUID getId() { return id; }
+public void setId(UUID id) { this.id = id; }
 
 public String getOwnerFirstName() { return ownerFirstName; }
 public void setOwnerFirstName(String ownerFirstName) { this.ownerFirstName = ownerFirstName; }
