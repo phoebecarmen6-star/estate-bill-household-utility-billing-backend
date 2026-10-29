@@ -25,7 +25,7 @@ public class MeterReading {
     @JoinColumn(name = "meter_reader_id")
     private MeterReader meterReader;
 
-    public UUID getid() { return id; }
+    public UUID getId() { return id; }
     public void setId(UUID id) { this.id = id; }
 
     public LocalDate getReadingDate() { return readingDate; }
