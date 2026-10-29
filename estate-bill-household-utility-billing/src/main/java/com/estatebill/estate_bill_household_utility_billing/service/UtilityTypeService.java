@@ -44,7 +44,7 @@ public class UtilityTypeService {
             return "The Utility type with that id does not exist";
         }
         repository.deleteById(id);
-        return "Utility type deleted successfully";
+        return "The utility type deleted successfully";
        }
     
 }

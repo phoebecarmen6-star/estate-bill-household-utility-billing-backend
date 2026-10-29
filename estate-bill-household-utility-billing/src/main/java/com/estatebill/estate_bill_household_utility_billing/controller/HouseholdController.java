@@ -26,6 +26,11 @@ public class HouseholdController {
         return ResponseEntity.ok(service.getAll());
     }
 
+    @GetMapping("/by-owner-last-name")
+    public ResponseEntity<List<Household>> getByOwnerLastName(@RequestParam String ownerLastName) {
+        return ResponseEntity.ok(service.getByOwnerLastName(ownerLastName));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Object> getById(@PathVariable UUID id) {
         Optional<Household> found = service.getById(id);

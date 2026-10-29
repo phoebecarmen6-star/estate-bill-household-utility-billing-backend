@@ -48,6 +48,10 @@ public Optional<Household> update(UUID id, Household newData) {
         return "Household deleted successfully";
     }
 
+    public List<Household> getByOwnerLastName(String ownerLastName) {
+        return  repository.findByOwnerLastNameIgnoreCaseOrderByOwnerFirstNameAsc(ownerLastName);
+    }
+
     }
 
     
