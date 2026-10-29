@@ -1,5 +1,6 @@
 package com.estatebill.estate_bill_household_utility_billing.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -40,6 +41,14 @@ public class MeterReadingController {
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The meter reading with that id does not exist");
     }
+
+    @GetMapping("/between")
+    public ResponseEntity<List<MeterReading>> getBetween(@RequestParam String start, @RequestParam String end) {
+         LocalDate startDate = LocalDate.parse(start);
+         LocalDate endDate = LocalDate.parse(end);
+         return ResponseEntity.ok(service.getBetween(startDate, endDate));
+    }
+         
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Object> update(@PathVariable UUID id, @RequestBody MeterReading meterReading) {

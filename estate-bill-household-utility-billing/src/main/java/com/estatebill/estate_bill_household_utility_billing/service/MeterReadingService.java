@@ -1,5 +1,6 @@
 package com.estatebill.estate_bill_household_utility_billing.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -51,5 +52,9 @@ public class MeterReadingService {
 
     public List<MeterReading> getByStatus(ReadingStatus status) {
         return repository.findByStatusOrderByReadingDateAsc(status);
+    }
+
+    public List<MeterReading> getBetween(LocalDate start, LocalDate end) {
+        return repository.findByReadingDateBetweenOrderByReadingDateAsc(start, end);
     }
 }
