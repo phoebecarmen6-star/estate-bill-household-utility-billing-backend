@@ -52,5 +52,9 @@ public class BlockService {
         return "Block deleted successfully";
         
     }
+
+    public List<Block> getFree() {
+        return repository.findFreeBlocks();
+    }
 }
 

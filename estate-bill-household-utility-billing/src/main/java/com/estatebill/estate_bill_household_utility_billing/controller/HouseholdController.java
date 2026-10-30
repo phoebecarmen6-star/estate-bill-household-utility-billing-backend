@@ -57,4 +57,13 @@ public class HouseholdController {
         }
         return ResponseEntity.ok(message);
     }
+
+        @GetMapping("/of-meter-reader/{meterReaderId}")
+    public ResponseEntity<Object> ofMeterReader(@PathVariable UUID meterReaderId) {
+        Optional<List<Household>> result = service.getOfMeterReader(meterReaderId);
+        if (result.isPresent()) {
+            return ResponseEntity.ok(result.get());
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The meter reader with that id does not exist");
+    }
 }

@@ -52,4 +52,9 @@ public class BlockController{
         }
         return ResponseEntity.ok(message);
     }
+
+    @GetMapping("/free")
+    public ResponseEntity<List<Block>> free() {
+        return ResponseEntity.ok(service.getFree());
+    }
 }

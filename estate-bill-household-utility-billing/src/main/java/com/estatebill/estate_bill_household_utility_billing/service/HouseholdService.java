@@ -7,12 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.estatebill.estate_bill_household_utility_billing.model.Household;
 import com.estatebill.estate_bill_household_utility_billing.repository.HouseholdRepository;
+import com.estatebill.estate_bill_household_utility_billing.repository.MeterReaderRepository;
 
 
 @Service 
 public class HouseholdService {
     @Autowired 
     private HouseholdRepository repository;
+
+
+    @Autowired
+    private MeterReaderRepository meterReaderRepository;
 
     public String save(Household household) {
             repository.save(household);
@@ -51,6 +56,13 @@ public Optional<Household> update(UUID id, Household newData) {
     public List<Household> getByOwnerLastName(String ownerLastName) {
         return  repository.findByOwnerLastNameIgnoreCaseOrderByOwnerFirstNameAsc(ownerLastName);
     }
+
+           public Optional<List<Household>> getOfMeterReader(UUID meterReaderId) {
+           if (!meterReaderRepository.existsById(meterReaderId)) {
+               return Optional.empty();
+           }
+           return Optional.of(repository.findByMeterReaderId(meterReaderId));
+       }
 
     }
 

@@ -46,5 +46,10 @@ public class UtilityTypeService {
         repository.deleteById(id);
         return "The utility type deleted successfully";
        }
+
+       public List<UtilityType> getUnused() {
+        return repository.findUnused();
+
+       }
     
 }

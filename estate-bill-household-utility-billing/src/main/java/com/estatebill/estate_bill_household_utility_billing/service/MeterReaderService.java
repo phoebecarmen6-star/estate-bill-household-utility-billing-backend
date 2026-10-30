@@ -46,4 +46,8 @@ public class MeterReaderService {
         repository.deleteById(id);
         return "Meter reader deleted successfully";
     }
+
+    public List<MeterReader> getByUtilityType(String name) {
+        return repository.findByUtilityTypeName(name);
+    }
 }

@@ -52,4 +52,10 @@ public class UtilityTypeController {
         }
         return ResponseEntity.ok(message);
     }
+
+    
+        @GetMapping("/unused")
+    public ResponseEntity<List<UtilityType>> unused() {
+        return ResponseEntity.ok(service.getUnused());
+    }
 }

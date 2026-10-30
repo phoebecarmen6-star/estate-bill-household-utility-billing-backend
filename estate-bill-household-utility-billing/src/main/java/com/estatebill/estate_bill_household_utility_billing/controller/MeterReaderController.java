@@ -53,4 +53,9 @@ public class MeterReaderController {
         }
         return ResponseEntity.ok(message);
     }
+
+    @GetMapping("/by-utility-type")
+    public ResponseEntity<List<MeterReader>> byUtilityType(@RequestParam String name) {
+        return ResponseEntity.ok(service.getByUtilityType(name));
+    }
 }
