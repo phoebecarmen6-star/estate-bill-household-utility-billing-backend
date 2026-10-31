@@ -12,6 +12,8 @@ import com.estatebill.estate_bill_household_utility_billing.model.MeterReading;
 import com.estatebill.estate_bill_household_utility_billing.model.ReadingStatus;
 import com.estatebill.estate_bill_household_utility_billing.service.MeterReadingService;
 
+
+
 @RestController
 @RequestMapping("/api/meter-readings")
 public class MeterReadingController {
@@ -20,7 +22,14 @@ public class MeterReadingController {
 
     @PostMapping("/save")
     public ResponseEntity<String> save(@RequestBody MeterReading meterReading) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.save(meterReading));
+        String message = service.save(meterReading);
+        if (message.contains("cannot be in the past")) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
+        }
+        if (message.contains("already has a reading")) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(message);
     }
 
     @GetMapping("/all")
@@ -57,6 +66,19 @@ public class MeterReadingController {
             return ResponseEntity.ok(updated.get());
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The meter reading with that id does not exist");
+    }
+
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<String> updateStatus(@PathVariable UUID id, @RequestParam ReadingStatus status) {
+        String message = service.updateStatus(id, status);
+        if (message.contains("does not exist")) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
+        }
+        if (message.startsWith("Cannot change status")) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
+        }
+        return ResponseEntity.ok(message);
+
     }
 
     @DeleteMapping("/delete/{id}")

@@ -16,7 +16,15 @@ public class MeterReadingService {
     private MeterReadingRepository repository;
 
     public String save(MeterReading reading) {
-        repository.save(reading);
+        if (reading.getReadingDate().isBefore(LocalDate.now())) {
+            return "Meter reading date cannot be in the past";
+        }
+        if (repository.existsByMeterReaderAndReadingDateAndStatusNot(
+            reading.getMeterReader(), reading.getReadingDate(), ReadingStatus.REJECTED)) {
+          return "Meter reader already has a reading on that date";    
+            }
+            reading.setStatus(ReadingStatus.RECORDED);
+            repository.save(reading);
         return "Meter reading saved successfully";
     }
 
@@ -56,5 +64,27 @@ public class MeterReadingService {
 
     public List<MeterReading> getBetween(LocalDate start, LocalDate end) {
         return repository.findByReadingDateBetweenOrderByReadingDateAsc(start, end);
+    }
+
+    public String updateStatus(UUID id, ReadingStatus newStatus) {
+        Optional<MeterReading> found = repository.findById(id);
+        if  (found.isEmpty()) {
+            return "The meter reading with that id does not exist";
+        }
+        MeterReading existing = found.get();
+        ReadingStatus current = existing.getStatus();
+        boolean allowed =
+                ((current == ReadingStatus.RECORDED)
+                        && (newStatus == ReadingStatus.VERIFIED || newStatus == ReadingStatus.REJECTED))
+                || (current == ReadingStatus.VERIFIED
+                    && (newStatus == ReadingStatus.BILLED || newStatus == ReadingStatus.REJECTED));
+
+        if (!allowed) {
+            return "Cannot change status from " + current + " to " + newStatus;
+        }
+        existing.setStatus(newStatus);
+        repository.save(existing);
+        return "Meter reading status updated successfully";
+
     }
 }
