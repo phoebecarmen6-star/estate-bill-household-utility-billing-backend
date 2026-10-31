@@ -71,4 +71,15 @@ public class MeterReaderController {
     public ResponseEntity<List<MeterReader>> byUtilityType(@RequestParam String name) {
         return ResponseEntity.ok(service.getByUtilityType(name));
     }
+
+    @PatchMapping("/{meterReaderId}/block")
+    public ResponseEntity<String> changeBlock(@PathVariable("meterReaderId") UUID meterReaderId, @RequestParam("blockNumber") int blockNumber ) {
+        String message = service.changeBlock(meterReaderId, blockNumber);
+        if (message.contains("does not exist")) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
+        } else if (message.contains("is taken")) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
+        }
+        return ResponseEntity.ok(message);
+    }
 }

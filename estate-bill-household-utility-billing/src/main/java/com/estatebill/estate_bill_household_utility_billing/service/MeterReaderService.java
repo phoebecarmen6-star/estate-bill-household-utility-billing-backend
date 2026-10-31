@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.estatebill.estate_bill_household_utility_billing.model.MeterReader;
 import com.estatebill.estate_bill_household_utility_billing.model.UtilityType;
+import com.estatebill.estate_bill_household_utility_billing.model.Block;
+import com.estatebill.estate_bill_household_utility_billing.repository.BlockRepository;
 import com.estatebill.estate_bill_household_utility_billing.repository.MeterReaderRepository;
 import com.estatebill.estate_bill_household_utility_billing.repository.UtilityTypeRepository;
 
@@ -17,6 +19,9 @@ public class MeterReaderService {
 
     @Autowired 
     private UtilityTypeRepository utilityTypeRepository;
+
+    @Autowired
+    private BlockRepository blockRepository;
 
     public String save(MeterReader meterReader) {
         repository.save(meterReader);
@@ -76,5 +81,24 @@ public class MeterReaderService {
                 repository.save(reader);
                 return "Utility type added to the meter reader";
 
+    }
+
+    public String changeBlock(UUID meterReaderId, int BlockNumber) {
+        Optional<MeterReader> readerFound = repository.findById(meterReaderId);
+        if (readerFound.isEmpty()) {
+            return "The meter reader with that id does not exist";
+        }
+        Optional<Block> blockFound = blockRepository.findByBlockNumber(BlockNumber);
+        if (blockFound.isEmpty()) {
+            return ("The block with that id does not exist");
+        }
+        MeterReader reader = readerFound.get();
+        Block block = blockFound.get();
+        if (repository.existsByBlock(block)) {
+            return ("That block is taken by another meter reader");
+        }
+        reader.setBlock(block);
+        repository.save(reader);
+        return ("Block changed successfully");
     }
 }
