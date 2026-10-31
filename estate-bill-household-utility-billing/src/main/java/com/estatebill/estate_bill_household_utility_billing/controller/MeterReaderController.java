@@ -45,6 +45,19 @@ public class MeterReaderController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The meter reader with that id does not exist");
     }
 
+    @PutMapping("/{meterReaderId}/utility-types/{utilityTypeId}")
+    public ResponseEntity<String> addUtilityType(@PathVariable UUID meterReaderId, @PathVariable UUID utilityTypeId) {
+        String message = service.addUtilityType(meterReaderId, utilityTypeId);
+        if (message.contains("does not exist")) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
+
+        }
+        if (message.contains("already has")) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
+        }
+        return ResponseEntity.ok(message);
+    }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> delete(@PathVariable UUID id) {
         String message = service.delete(id);

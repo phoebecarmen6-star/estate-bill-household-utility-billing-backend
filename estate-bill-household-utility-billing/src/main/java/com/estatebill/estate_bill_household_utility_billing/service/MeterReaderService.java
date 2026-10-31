@@ -6,12 +6,17 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.estatebill.estate_bill_household_utility_billing.model.MeterReader;
+import com.estatebill.estate_bill_household_utility_billing.model.UtilityType;
 import com.estatebill.estate_bill_household_utility_billing.repository.MeterReaderRepository;
+import com.estatebill.estate_bill_household_utility_billing.repository.UtilityTypeRepository;
 
 @Service
 public class MeterReaderService {
     @Autowired
     private MeterReaderRepository repository;
+
+    @Autowired 
+    private UtilityTypeRepository utilityTypeRepository;
 
     public String save(MeterReader meterReader) {
         repository.save(meterReader);
@@ -49,5 +54,27 @@ public class MeterReaderService {
 
     public List<MeterReader> getByUtilityType(String name) {
         return repository.findByUtilityTypeName(name);
+    }
+
+    public String addUtilityType(UUID meterReaderId, UUID utilityTypeId) {
+        Optional<MeterReader> foundReader = repository.findById(meterReaderId);
+        if (foundReader.isEmpty()) {
+            return "The meter reader with that id does not exist";
+        }
+        Optional<UtilityType> foundType = utilityTypeRepository.findById(utilityTypeId);
+        if (foundType.isEmpty()) {
+            return "That utility type does not exist";
+        }
+        MeterReader reader = foundReader.get();
+        UtilityType type = foundType.get();
+        boolean alreadyHas = reader.getUtilityTypes().stream() 
+                .anyMatch(u -> u.getId().equals(type.getId()));
+                if  (alreadyHas) {
+                    return "The meter reader already has that utility type";
+                }
+                reader.getUtilityTypes().add(type);
+                repository.save(reader);
+                return "Utility type added to the meter reader";
+
     }
 }
