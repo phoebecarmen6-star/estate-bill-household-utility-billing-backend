@@ -1,0 +1,1450 @@
+{
+  "info": {
+    "_postman_id": "6295f68d-5330-4239-825d-210f356374f8",
+    "name": "estate-bill-household-utility-billing-midterm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58466455"
+  },
+  "item": [
+    {
+      "name": "A2-save",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "   {\"name\": \"Water\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/utility-types/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "utility-types",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-get all",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/utility-types/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "utility-types",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Save requests",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"blockNumber\": 1, \"name\": \"Block 1\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/blocks/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "blocks",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ALL blocks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/blocks/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "blocks",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "wrong id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/blocks/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "blocks",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Household",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "   {\"ownerFirstName\": \"Alice\", \"ownerLastName\": \"Nyirahabimana\", \"unitCode\": \"B-12\", \"phone\": \"0788000001\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/households/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "households",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/households/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "households",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/households/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "households",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/blocks/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "blocks",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/utility-types/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "utility-types",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "all utility types",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/utility-types/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "utility-types",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "all blocks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/blocks/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "blocks",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "all households",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/households/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "households",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "J meter reader save",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Jean\",\r\n  \"lastName\": \"Mugabo\",\r\n  \"phone\": \"0788111111\",\r\n  \"block\": { \"id\": \"39abc799-4472-4027-84fd-918e59fb323b\" },\r\n  \"utilityTypes\": [\r\n    { \"id\": \"e3d54e90-4313-4eca-b6b8-9ed329b9176f\" },\r\n    { \"id\": \"28fb3a63-2192-46f9-9aa3-1a55e1282abb\" }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readers/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readers",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ma meter reader save",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Marie\",\r\n  \"lastName\": \"Uwimana\",\r\n  \"phone\": \"0788222222\",\r\n  \"block\": { \"id\": \"0adc6a2f-427f-4c3b-9a23-3d9ac97c07f1\" },\r\n  \"utilityTypes\": [\r\n    { \"id\": \"4dd3a148-21fe-49fb-95df-7fd5b2204883\" }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readers/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readers",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "P meter reader save",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Paul\",\r\n  \"lastName\": \"Habimana\",\r\n  \"phone\": \"0788333333\",\r\n  \"block\": { \"id\": \"edc96b9b-da6e-4189-bec8-5869caceb42a\" },\r\n  \"utilityTypes\": [\r\n    { \"id\": \"28fb3a63-2192-46f9-9aa3-1a55e1282abb\" }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readers/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readers",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "all meter reader",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readers/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readers",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Meter Readings A&J",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"readingDate\": \"2026-10-20\", \"status\": \"REJECTED\", \"meterType\": \"Water\", \"unitsUsed\": 25,\r\n  \"household\": { \"id\": \"c1516d3e-e45b-4192-9f31-4ab47cb2bfb0\" },\r\n  \"meterReader\": { \"id\": \"b3c63eaa-8182-4fbf-8bca-7b1658f49c1d\" } }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A&J REC",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"readingDate\": \"2026-10-20\", \"status\": \"RECORDED\", \"meterType\": \"Water\", \"unitsUsed\": 27,\r\n  \"household\": { \"id\": \"c1516d3e-e45b-4192-9f31-4ab47cb2bfb0\" },\r\n  \"meterReader\": { \"id\": \"b3c63eaa-8182-4fbf-8bca-7b1658f49c1d\" } }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A&M BILLED",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"readingDate\": \"2026-10-22\", \"status\": \"BILLED\", \"meterType\": \"Gas\", \"unitsUsed\": 12,\r\n  \"household\": { \"id\": \"c1516d3e-e45b-4192-9f31-4ab47cb2bfb0\" },\r\n  \"meterReader\": { \"id\": \"e9e76066-3bbd-4c63-a0cf-a83b3fde4eba\" } }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A&J VERIFIED",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"readingDate\": \"2026-11-05\", \"status\": \"VERIFIED\", \"meterType\": \"Electricity\", \"unitsUsed\": 140,\r\n  \"household\": { \"id\": \"c1516d3e-e45b-4192-9f31-4ab47cb2bfb0\" },\r\n  \"meterReader\": { \"id\": \"b3c63eaa-8182-4fbf-8bca-7b1658f49c1d\" } }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B&P BILLED",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"readingDate\": \"2026-10-21\", \"status\": \"BILLED\", \"meterType\": \"Electricity\", \"unitsUsed\": 90,\r\n  \"household\": { \"id\": \"c98836ce-f244-4ae1-b8b3-8c73fb535a59\" },\r\n  \"meterReader\": { \"id\": \"3f369366-e5fb-412d-8756-be2521d085d4\" } }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B&P REC",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"readingDate\": \"2026-11-03\", \"status\": \"RECORDED\", \"meterType\": \"Electricity\", \"unitsUsed\": 95,\r\n  \"household\": { \"id\": \"c98836ce-f244-4ae1-b8b3-8c73fb535a59\" },\r\n  \"meterReader\": { \"id\": \"3f369366-e5fb-412d-8756-be2521d085d4\" } }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E&M VERIFIED",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"readingDate\": \"2026-10-25\", \"status\": \"VERIFIED\", \"meterType\": \"Gas\", \"unitsUsed\": 10,\r\n  \"household\": { \"id\": \"9f7bbf47-843c-4ce7-ae20-678bd98ad1d5\" },\r\n  \"meterReader\": { \"id\": \"e9e76066-3bbd-4c63-a0cf-a83b3fde4eba\" } }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "G&J REC",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"readingDate\": \"2026-11-10\", \"status\": \"RECORDED\", \"meterType\": \"Water\", \"unitsUsed\": 31,\r\n  \"household\": { \"id\": \"490effef-926a-4a7f-ba75-1771a9d92aa5\" },\r\n  \"meterReader\": { \"id\": \"b3c63eaa-8182-4fbf-8bca-7b1658f49c1d\" } }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "G&P BILLED",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"readingDate\": \"2026-11-12\", \"status\": \"BILLED\", \"meterType\": \"Electricity\", \"unitsUsed\": 120,\r\n  \"household\": { \"id\": \"490effef-926a-4a7f-ba75-1771a9d92aa5\" },\r\n  \"meterReader\": { \"id\": \"3f369366-e5fb-412d-8756-be2521d085d4\" } }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "P&M REJ",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"readingDate\": \"2026-11-15\", \"status\": \"REJECTED\", \"meterType\": \"Gas\", \"unitsUsed\": 8,\r\n  \"household\": { \"id\": \"2764e1b2-c432-4697-93ca-4c54c8d1e30f\" },\r\n  \"meterReader\": { \"id\": \"e9e76066-3bbd-4c63-a0cf-a83b3fde4eba\" } }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "All Meter readings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/households/by-owner-last-name?ownerLastName=nyirahabimana",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "households",
+            "by-owner-last-name"
+          ],
+          "query": [
+            {
+              "key": "ownerLastName",
+              "value": "nyirahabimana"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "REC",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/by-status?status=RECORDED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "by-status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "RECORDED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BILLED",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/by-status?status=BILLED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "by-status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "BILLED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "HELLO",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/by-status?status=HELLO",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "by-status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "HELLO"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/between?start=2027-01-01&end=2027-01-31",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "between"
+          ],
+          "query": [
+            {
+              "key": "start",
+              "value": "2027-01-01"
+            },
+            {
+              "key": "end",
+              "value": "2027-01-31"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readers/by-utility-type?name=water",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readers",
+            "by-utility-type"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "water"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/blocks/free",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "blocks",
+            "free"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/utility-types/unused",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "utility-types",
+            "unused"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C4",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/households/of-meter-reader/b3c63eaa-8182-4fbf-8bca-7b1658f49c1d",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "households",
+            "of-meter-reader",
+            "b3c63eaa-8182-4fbf-8bca-7b1658f49c1d"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C4-ERROR",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/households/of-meter-reader/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "households",
+            "of-meter-reader",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"readingDate\": \"2026-10-30\",\r\n  \"status\": \"BILLED\",\r\n  \"meterType\": \"Water\",\r\n  \"unitsUsed\": 120,\r\n  \"household\": { \"id\": \"c1516d3e-e45b-4192-9f31-4ab47cb2bfb0\" },\r\n  \"meterReader\": { \"id\": \"b3c63eaa-8182-4fbf-8bca-7b1658f49c1d\" }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D2 404",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/00000000-0000-0000-0000-000000000000/status?status=VERIFIED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "00000000-0000-0000-0000-000000000000",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "VERIFIED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readers/3f369366-e5fb-412d-8756-be2521d085d4/utility-types/e3d54e90-4313-4eca-b6b8-9ed329b9176f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readers",
+            "3f369366-e5fb-412d-8756-be2521d085d4",
+            "utility-types",
+            "e3d54e90-4313-4eca-b6b8-9ed329b9176f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3 409",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readers/3f369366-e5fb-412d-8756-be2521d085d4/utility-types/28fb3a63-2192-46f9-9aa3-1a55e1282abb",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readers",
+            "3f369366-e5fb-412d-8756-be2521d085d4",
+            "utility-types",
+            "28fb3a63-2192-46f9-9aa3-1a55e1282abb"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3 404",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readers/00000000-0000-0000-0000-000000000000/utility-types/e3d54e90-4313-4eca-b6b8-9ed329b9176f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readers",
+            "00000000-0000-0000-0000-000000000000",
+            "utility-types",
+            "e3d54e90-4313-4eca-b6b8-9ed329b9176f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3 404 TYPE",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readers/3f369366-e5fb-412d-8756-be2521d085d4/utility-types/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readers",
+            "3f369366-e5fb-412d-8756-be2521d085d4",
+            "utility-types",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4 409",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/blocks/free",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "blocks",
+            "free"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "meter readings all",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D2 200",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/253e974b-fc85-4b26-a2c7-3fd31e1b3ca1/status?status=BILLED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "253e974b-fc85-4b26-a2c7-3fd31e1b3ca1",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "BILLED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D2 400",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/253e974b-fc85-4b26-a2c7-3fd31e1b3ca1/status?status=BILLED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "253e974b-fc85-4b26-a2c7-3fd31e1b3ca1",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "BILLED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"channel\": \"Mobile Money\", \"reference\": \"MM-7781920\", \"amountRwf\": 12500}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/bill-payments/save?meterReadingId=3a97a914-5545-484f-8e83-3256f0cbe8d7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bill-payments",
+            "save"
+          ],
+          "query": [
+            {
+              "key": "meterReadingId",
+              "value": "3a97a914-5545-484f-8e83-3256f0cbe8d7"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/bill-payments/household/B-12",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bill-payments",
+            "household",
+            "B-12"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E3",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/bill-payments/delete/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bill-payments",
+            "delete",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "F1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/stats/by-status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "stats",
+            "by-status"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "F2",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/cancel-day?meterReaderId=b3c63eaa-8182-4fbf-8bca-7b1658f49c1d&date=2026-10-20",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "cancel-day"
+          ],
+          "query": [
+            {
+              "key": "meterReaderId",
+              "value": "b3c63eaa-8182-4fbf-8bca-7b1658f49c1d"
+            },
+            {
+              "key": "date",
+              "value": "2026-10-20"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "dashboard summary",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/dashboard/summary",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "dashboard",
+            "summary"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "dashboard page",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/meter-readings/page?page=0&size=5&sort=readingDate,desc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "meter-readings",
+            "page"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "5"
+            },
+            {
+              "key": "sort",
+              "value": "readingDate,desc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
