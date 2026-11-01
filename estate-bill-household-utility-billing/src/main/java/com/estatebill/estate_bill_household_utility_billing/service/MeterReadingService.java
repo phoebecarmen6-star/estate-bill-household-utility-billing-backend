@@ -9,11 +9,19 @@ import org.springframework.stereotype.Service;
 import com.estatebill.estate_bill_household_utility_billing.model.MeterReading;
 import com.estatebill.estate_bill_household_utility_billing.model.ReadingStatus;
 import com.estatebill.estate_bill_household_utility_billing.repository.MeterReadingRepository;
+import com.estatebill.estate_bill_household_utility_billing.repository.BillPaymentRepository;
+
 
 @Service
 public class MeterReadingService {
+    
     @Autowired
     private MeterReadingRepository repository;
+
+    @Autowired 
+    private BillPaymentRepository billPaymentRepository;
+
+   
 
     public String save(MeterReading reading) {
         if (reading.getReadingDate().isBefore(LocalDate.now())) {
@@ -51,8 +59,12 @@ public class MeterReadingService {
     }
 
     public String delete(UUID id) {
-        if (!repository.existsById(id)) {
+        Optional<MeterReading> found = repository.findById(id);
+        if (found.isEmpty()) {
             return "The meter reading with that id does not exist";
+        }
+        if (billPaymentRepository.existsByMeterReading(found.get())) {
+            return "The meter reading has bill payments, delete them first";
         }
         repository.deleteById(id);
         return "Meter reading deleted successfully";
