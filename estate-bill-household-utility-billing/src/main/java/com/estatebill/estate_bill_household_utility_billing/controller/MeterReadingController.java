@@ -13,6 +13,10 @@ import com.estatebill.estate_bill_household_utility_billing.model.ReadingStatus;
 import com.estatebill.estate_bill_household_utility_billing.service.MeterReadingService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 
 
@@ -104,5 +108,15 @@ public class MeterReadingController {
     @PatchMapping("/cancel-day")
     public ResponseEntity<String> cancelDay(@RequestParam UUID meterReaderId, @RequestParam String date) {
         return ResponseEntity.ok(service.cancelDay(meterReaderId, LocalDate.parse(date)));
+    }
+
+    @GetMapping("/page")
+    public ResponseEntity<Page<MeterReading>> page(@RequestParam int page,
+                                                   @RequestParam int size,
+                                                   @RequestParam String sort) {
+      String[] parts = sort.split(",");
+      Sort.Direction direction = Sort.Direction.fromString(parts[1]);
+      Pageable pageable = PageRequest.of(page, size, Sort.by(direction, parts[0]));
+      return ResponseEntity.ok(service.getPage(pageable));
     }
 }

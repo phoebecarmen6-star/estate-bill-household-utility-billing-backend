@@ -22,6 +22,10 @@ public interface MeterReadingRepository extends JpaRepository<MeterReading, UUID
     List<MeterReading> findByReadingDateBetweenOrderByReadingDateAsc(LocalDate start, LocalDate end);
 
     boolean existsByMeterReaderAndReadingDateAndStatusNot(MeterReader metReader, LocalDate readingDate, ReadingStatus status);
+
+    long countByReadingDate(LocalDate readingDate);
+
+    long countByStatus(ReadingStatus status);
     
 
     @Modifying

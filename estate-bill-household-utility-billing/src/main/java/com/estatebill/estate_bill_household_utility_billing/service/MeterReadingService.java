@@ -10,6 +10,8 @@ import com.estatebill.estate_bill_household_utility_billing.model.MeterReading;
 import com.estatebill.estate_bill_household_utility_billing.model.ReadingStatus;
 import com.estatebill.estate_bill_household_utility_billing.repository.MeterReadingRepository;
 import com.estatebill.estate_bill_household_utility_billing.repository.BillPaymentRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 
 @Service
@@ -22,6 +24,9 @@ public class MeterReadingService {
     private BillPaymentRepository billPaymentRepository;
 
    
+    public Page<MeterReading> getPage(Pageable pageable) {
+        return repository.findAll(pageable);
+    }
 
     public String save(MeterReading reading) {
         if (reading.getReadingDate().isBefore(LocalDate.now())) {
@@ -64,7 +69,7 @@ public class MeterReadingService {
             return "The meter reading with that id does not exist";
         }
         if (billPaymentRepository.existsByMeterReading(found.get())) {
-            return "The meter reading has bill payments, delete them first";
+            return "That meter reading has bill payments, delete them first";
         }
         repository.deleteById(id);
         return "Meter reading deleted successfully";
