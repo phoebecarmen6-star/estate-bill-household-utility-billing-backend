@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import com.estatebill.estate_bill_household_utility_billing.model.MeterReading;
 import com.estatebill.estate_bill_household_utility_billing.model.ReadingStatus;
 import com.estatebill.estate_bill_household_utility_billing.service.MeterReadingService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -57,6 +60,12 @@ public class MeterReadingController {
          LocalDate endDate = LocalDate.parse(end);
          return ResponseEntity.ok(service.getBetween(startDate, endDate));
     }
+
+    @GetMapping("/stats/by-status")
+    public ResponseEntity<List<Object[]>> statsByStatus() {
+        return ResponseEntity.ok(service.getStatsByStatus());
+    }
+    
          
 
     @PutMapping("/update/{id}")
@@ -90,5 +99,10 @@ public class MeterReadingController {
             return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
         }
         return ResponseEntity.ok(message);
+    }
+
+    @PatchMapping("/cancel-day")
+    public ResponseEntity<String> cancelDay(@RequestParam UUID meterReaderId, @RequestParam String date) {
+        return ResponseEntity.ok(service.cancelDay(meterReaderId, LocalDate.parse(date)));
     }
 }

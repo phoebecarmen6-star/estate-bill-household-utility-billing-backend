@@ -99,4 +99,13 @@ public class MeterReadingService {
         return "Meter reading status updated successfully";
 
     }
+
+    public List<Object[]> getStatsByStatus() {
+        return repository.countByStatusGrouped();
+    }
+
+    public String cancelDay(UUID meterReaderId, LocalDate date) {
+        int count = repository.cancelDay(meterReaderId, date, ReadingStatus.REJECTED, ReadingStatus.BILLED);
+        return count + " meter readings cancelled";
+    }
 }
